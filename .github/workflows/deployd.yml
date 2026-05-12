@@ -31,9 +31,3 @@ jobs:
 
       - name: Validar infraestructura (CloudFormation)
         run: aws cloudformation validate-template --template-body file://template.yaml
-
-      - name: Desplegar Lambda
-        run: |
-          cd lambda
-          zip function.zip lambda_function.py
-          aws lambda update-function-code --function-name microservicio-logistica --zip-file fileb://function.zip
